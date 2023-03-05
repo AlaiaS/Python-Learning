@@ -127,7 +127,7 @@ while n < 10:
         continue
     print(n)
 # %%
-s = set((1,2,3))
+s = set((1,(2,3),3))
 print(s)
 # %%
 s = set((1,[2,3]))
@@ -135,4 +135,7 @@ print(s)
 # %%
 d = {'A':(1,2,3),'B':(1,[2,3])}
 print(d['A'])
+# %%
+s = set([1,2,3])
+print(s)
 # %%
