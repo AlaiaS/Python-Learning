@@ -142,3 +142,6 @@ if f != 33:
 elif s != 7986:
     print('测试失败!')
 # %%
+
+# Partial function
+
