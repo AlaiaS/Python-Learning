@@ -112,10 +112,17 @@ L = list(filter(lambda n: n % 2 == 1, range(1, 20)))
 
 print(L)    
 # %%
+import time, functools
 
 def metric(fn):
-    print('%s executed in %s ms' % (fn.__name__, 10.24))
-    return fn
+    @functools.wraps(fn)
+    def wrapper(*args, **kw):
+        start = time.time()
+        result = fn(*args, **kw)
+        end = time.time()
+        print('%s executed in %s ms' % (fn.__name__, end-start))
+        return result
+    return wrapper
 
 # 测试
 @metric
